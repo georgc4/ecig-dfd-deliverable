@@ -1,18 +1,19 @@
-\section{Alternative Concept: The Universal Removable Battery Standard}
+\section{Alternative Concept: The Universal Removable Battery Standard: Carlos Georges}
 \label{sec:alternative}
 
-Based on the LCA results identifying \todo{specify greatest impact --- likely battery materials and end-of-life landfilling} as the dominant environmental impact, this section presents an alternative concept designed to minimize these impacts: a \textbf{universal removable battery standard} for electronic cigarettes.
+The LCA results (Section~\ref{sec:lca}) identified \textbf{primary aluminum manufacturing} as the single largest contributor to environmental impact for the Air Bar NEX. The DfD concept addresses this by switching the housing to recycled (secondary) aluminum, which alone produced the greatest reduction in overall impact. That said, the lithium-ion battery is still the most problematic component at end of life even though it is not the dominant LCA driver. It is classified as hazardous waste, causes fires in waste facilities costing \$95M/year \cite{wmw2025}, and its constituent metals (cobalt, nickel, lithium) are critical minerals with limited supply chains. This section proposes a \textbf{universal removable battery standard} for electronic cigarettes that builds on the DfD redesign to further reduce environmental impact and improve end-of-life safety.
 
 \subsection{Design Rationale}
 
-The Oxford/UCL study demonstrated that lithium-ion cells in disposable e-cigarettes can sustain over 450 charge--discharge cycles \cite{williams2023}, yet are discarded after a single use. The core insight driving this concept is that the battery---the most environmentally impactful component---can be \textbf{decoupled from the consumable portion} of the device and \textbf{standardized across manufacturers}.
-
-This approach draws on precedent from:
+An Oxford/UCL study showed that lithium-ion cells recovered from disposable e-cigarettes can sustain over 450 charge/discharge cycles \cite{williams2023}, yet each cell is currently thrown away after a single use. By separating the battery from the consumable part of the device and standardizing it across manufacturers, we can achieve:
 \begin{itemize}
-    \item The AA/AAA battery standard (IEC 60086), which enables interchangeability across thousands of products from hundreds of manufacturers
-    \item The EU Batteries Regulation (Article 11), which mandates removable, replaceable batteries in portable electronics by February 2027 \cite{eu_batteries_2023}
-    \item The Fairphone modular smartphone design, which demonstrates commercial viability of DfD consumer electronics
+    \item \textbf{Battery lifecycle extension}: A single cell can be reused across 10 to 450+ device lifecycles instead of just 1, cutting per-device demand for cobalt, nickel, and lithium
+    \item \textbf{Fire prevention}: Batteries get removed before the device enters the waste stream, which eliminates the ignition source in waste facilities
+    \item \textbf{Regulatory compliance}: The EU Batteries Regulation (Article~11) will mandate removable, replaceable batteries in portable electronics by February 2027 \cite{eu_batteries_2023}
+    \item \textbf{Consumer participation}: A simple, tool-free removal mechanism makes it easier for consumers to dispose of and recycle batteries properly
 \end{itemize}
+
+This idea takes inspiration from the AA/AAA battery standard (IEC 60086), which already enables interchangeability across thousands of products, and the Fairphone modular smartphone, which has shown that DfD consumer electronics can be commercially viable.
 
 \subsection{Proposed Standard Specification}
 
@@ -20,27 +21,27 @@ The standard defines \textbf{three battery form factors} covering the full range
 
 \begin{table}[H]
 \centering
-\caption{Proposed universal e-cigarette battery standard --- three sizes.}
+\caption{Proposed universal e-cigarette battery standard: three sizes.}
 \label{tab:battery_standard}
 \begin{tabular}{@{}lcccl@{}}
 \toprule
 \textbf{Size Class} & \textbf{Diameter (mm)} & \textbf{Length (mm)} & \textbf{Capacity (mAh)} & \textbf{Use Case} \\
 \midrule
-VC-S (Small)   & \todo{8--10}  & \todo{30--35} & 280--400  & Compact / low-puff devices \\
-VC-M (Medium)  & \todo{10--13} & \todo{35--45} & 400--650  & Standard disposables \\
-VC-L (Large)   & \todo{13--15} & \todo{45--55} & 650--1000 & High-capacity devices \\
+VC-S (Small)   & 8   & 30  & 280--400  & Compact / low-puff devices \\
+VC-M (Medium)  & 12  & 40  & 400--650  & Standard disposables (e.g., Air Bar NEX) \\
+VC-L (Large)   & 14  & 50  & 650--1000 & High-capacity devices \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\todo{Insert dimensional drawing of each battery size class with tolerances.}
+The VC-M size class corresponds to the recovered 13450-format cell from the Air Bar NEX (12.0\,mm diameter, 40.0\,mm length, 650\,mAh, 3.7\,V). The prototype CAD model (Section~\ref{sec:cad_prototype}) is designed around this cell.
 
 \subsubsection{Mechanical Interface}
 \begin{itemize}
-    \item \textbf{Battery compartment}: Located at the base of the device, accessible via a twist-lock or snap-fit door
-    \item \textbf{Insertion method}: Drop-in cylindrical cell with keyed orientation (polarity alignment via asymmetric tab)
+    \item \textbf{Battery compartment}: Located at the base of the device, accessible via a quarter-turn bayonet (twist-lock) base cap
+    \item \textbf{Insertion method}: Drop-in cylindrical cell with keyed orientation (polarity alignment via asymmetric notch in the battery sled)
     \item \textbf{Retention}: Spring-loaded contact at one end provides both electrical connection and mechanical retention
-    \item \textbf{Removal}: Single-handed operation --- press release tab and slide battery out
+    \item \textbf{Removal}: Single-handed operation. Quarter-turn the base cap, tilt the device, and the battery slides out
 \end{itemize}
 
 \subsubsection{Electrical Interface}
@@ -58,55 +59,45 @@ VC-L (Large)   & \todo{13--15} & \todo{45--55} & 650--1000 & High-capacity devic
     \item \textbf{Material marking}: Battery sleeve marked with Li-ion recycling symbol and chemistry code
 \end{itemize}
 
-\begin{figure}[H]
-        \centering
-    \includegraphics[width=0.4\linewidth]{scad.png}
-        \caption{Redesigned Air Bar assembly: exploded view}
-    \label{fig:placeholder}
-    \end{figure}
-
 \subsection{Device Body Redesign}
+\label{sec:cad_prototype}
 
-Key design changes to the device body:
+We built a parametric CAD model of the redesigned device in OpenSCAD to validate the DfD concept. The model has six modular parts, all designed for tool-free disassembly (Figures~\ref{fig:exploded_dfd} and \ref{fig:assembled_dfd}):
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/snapfit_exploded.png}
+    \caption{Exploded view of the DfD-redesigned e-cigarette showing (bottom to top): inner chassis with PCB, aluminum shell with snap-fit tab cutouts, 13450 Li-ion battery, reservoir/atomizer assembly, and mouthpiece with integrated push-button snap-fit tabs.}
+    \label{fig:exploded_dfd}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.55\textwidth]{figures/snapfit_assembled.png}
+    \caption{Assembled view of the redesigned Air Bar NEX showing the snap-fit tab cutout on the aluminum shell and the mouthpiece-to-shell interface.}
+    \label{fig:assembled_dfd}
+\end{figure}
+
+Key design changes from the current Air Bar NEX:
 \begin{enumerate}
-    \item \textbf{Housing material}: Switch from aluminum to \textbf{a recycled aluminum alternative} to our impact factor. 
-    \item \textbf{Snap-fit assembly}: Two-piece snap-fit inserts that slot into place, and that can be released by pressing down on them. --- no adhesives, no ultrasonic welding, no screws.
-
-    \begin{figure}[H]
-        \centering
-    \includegraphics[width=0.7\linewidth]{fit.png}
-        \caption{Redesigned snap-fitting assembly}
-    \label{fig:placeholder}
-    \end{figure}
-
-    \item \textbf{Battery compartment}: Incorporation of quick-disconnect wires would allow the battery to be much more easily swapped, (especially compared to the current hard-wired alternative). 
-    \item \textbf{Modular atomizer cartridge}: Slide-in cartridge containing coil, wick, and e-liquid reservoir --- separate recycling stream from battery and housing
-    \item \textbf{Standardized PCB mounting}: PCB secured with press-fit standoffs, removable without tools. The same design, but without the need for adhesives. 
+    \item \textbf{Housing material}: Switch from primary aluminum to \textbf{recycled (secondary) aluminum} or \textbf{mono-material recyclable plastic} (polypropylene). The LCA showed that this single change produces the greatest reduction in environmental impact.
+    \item \textbf{Push-button snap-fit assembly}: The mouthpiece insert has two push-button snap-fit tabs (10.0\,mm wide $\times$ 4.0\,mm tall) that protrude through matching cutouts in the aluminum shell to lock the mouthpiece in place. Living hinge cutouts in the mouthpiece body allow the tabs to flex inward when pressed, so the user can remove the mouthpiece by hand without any adhesives, welding, or screws.
+    \item \textbf{Battery compartment}: Twist-lock (bayonet) base cap with quarter-turn engagement. Battery sits in a carrier sled with a polarity key notch to prevent reverse insertion.
+    \item \textbf{Modular atomizer cartridge}: Slide-in cartridge (16.0\,mm OD, 35.0\,mm length) containing the coil, wick, and e-liquid reservoir. Retained by an O-ring groove and cartridge lip. Enables separate recycling from the battery and housing.
+    \item \textbf{USB-C charging port}: Integrated into the body shell, allowing the battery to be recharged in-device without removal.
+    \item \textbf{PCB mounting}: Press-fit standoffs on an internal bracket. The PCB can be removed without tools or soldering.
 \end{enumerate}
+
+The overall device dimensions (48.2\,mm width $\times$ 19.0\,mm depth $\times$ 78.3\,mm height, with 0.7\,mm shell wall thickness) match the measured Air Bar NEX form factor while still fitting all the modular snap-fit components inside.
 
 \subsection{Impact Reduction Mechanisms}
 
 \begin{enumerate}
-    \item \textbf{Battery lifecycle extension}: Each battery reused across 10--450+ device lifecycles instead of 1, reducing per-use lithium demand by 90--99.8\%
-    \item \textbf{Elimination of waste stream fires}: Batteries removed before disposal, preventing lithium-ion fires in waste facilities
-    \item \textbf{Material recovery}: $>$90\% battery material recovery through established Li-ion recycling pathways (vs.\ $\sim$0\% currently)
-    \item \textbf{Reduced raw material extraction}: Less cobalt, nickel, and lithium mining per functional unit
-    \item \textbf{Simplified recycling}: Mono-material housing enables single-stream plastic recycling; modular separation eliminates manual sorting
+    \item \textbf{Aluminum impact reduction}: Switching from primary to recycled aluminum for the housing addresses the dominant environmental impact identified in the LCA. Secondary aluminum production uses roughly 95\% less energy than primary smelting.
+    \item \textbf{Battery lifecycle extension}: Each battery can be reused across 10 to 450+ device lifecycles instead of 1, cutting per-use demand for lithium, cobalt, and nickel.
+    \item \textbf{Waste stream fire prevention}: Batteries get removed before disposal, preventing lithium-ion fires in waste facilities.
+    \item \textbf{Material recovery}: Over 90\% battery material recovery through established Li-ion recycling pathways, compared to roughly 0\% currently.
+    \item \textbf{Simplified recycling}: A mono-material housing allows single-stream recycling, and modular separation removes the need for manual sorting at recycling facilities.
 \end{enumerate}
 
-\subsection{LCA of Alternative Concept}
-
-\todo{Run LCA for the alternative concept and present results. Key modeling differences from DfD concept:}
-\begin{itemize}
-    \item Battery impact allocated across \todo{X} use cycles (not just 1)
-    \item Housing material changed from aluminum to PP (lower embodied energy)
-    \item End-of-life credits for battery recycling and plastic recycling
-    \item Additional: USB-C charging port and spring contacts (marginal)
-\end{itemize}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth]{figures/lca_three_way.pdf}
-%     \caption{LCA comparison: reference product vs.\ DfD concept vs.\ alternative concept with universal battery standard.}
-%     \label{fig:lca_three_way}
-% \end{figure}
+The DfD concept LCA in Section~\ref{sec:lca} already accounts for the main environmental benefits of this alternative concept, including the switch to recycled aluminum and the change from landfill to recycling at end of life. We did not run a separate LCA for the battery-reuse scenario, but even spreading battery manufacturing impacts across just 10 reuse cycles would cut per-device battery contribution by about 90\%.
