@@ -16,8 +16,8 @@ The goal is to enable efficient separation of parts and materials at end of life
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.3\linewidth]{snap.png}
-        \caption{Reversible snap-fit connectors}
-    \label{fig:placeholder}
+    \caption{Reversible snap-fit connectors}
+    \label{fig:snapfit_diagram}
 \end{figure}
 
 \subsection{Principle 2: Standardize and Minimize Fasteners}
@@ -76,7 +76,7 @@ This modular architecture allows each module to be directed to the appropriate r
 
 \subsection{Principle 7: Minimize Disassembly Operations}
 
-\textbf{Current design}: Full disassembly of the Air Bar NEX required 8 distinct operations: scoring the housing seam, prying off the aluminum shell, extracting the inner sleeve, cutting the reservoir seal, desoldering PCB leads, separating the battery from its adhesive pad, removing the coil assembly, and pulling the mouthpiece cap. The process took approximately 12 minutes and required an X-acto knife, pliers, and a soldering iron.
+\textbf{Current design}: Full disassembly of the Air Bar NEX required 8 distinct operations: scoring the housing seam, prying off the aluminum shell, extracting the inner sleeve, cutting the reservoir seal, desoldering PCB leads, separating the battery from its adhesive pad, removing the coil assembly, and pulling the mouthpiece cap. The process took approximately 10--15 minutes and required an X-acto knife, pliers, and a soldering iron.
 
 \textbf{DfD redesign target}:
 \begin{itemize}
@@ -98,7 +98,7 @@ This modular architecture allows each module to be directed to the appropriate r
 Steps to remove battery       & 8               & 1 \\
 Total disassembly steps        & 8               & $\leq$5 \\
 Tools required                 & pliers, knife, soldering iron & None (hand only) \\
-Disassembly time               & $\sim$12 min    & $<$30 sec \\
+Disassembly time               & 10--15 min    & $<$30 sec \\
 Destructive?                   & Yes             & No \\
 Battery reusable after removal & No              & Yes \\
 Material recovery rate         & $\sim$0\%       & $>$90\% (target) \\
@@ -109,6 +109,6 @@ Material recovery rate         & $\sim$0\%       & $>$90\% (target) \\
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{dis.png}
-        \caption{Disassembling the current design takes 10+ minutes and requires handheld tools.}
-    \label{fig:placeholder}
+    \caption{Disassembling the current design takes 10+ minutes and requires handheld tools.}
+    \label{fig:disassembly_current}
 \end{figure}

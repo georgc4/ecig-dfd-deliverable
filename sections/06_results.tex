@@ -3,31 +3,32 @@
 
 \subsection{LCA Comparison}
 
-\todo{Present the three-way LCA comparison (Reference vs.\ DfD Concept vs.\ Alternative Concept) across all impact categories. Use bar charts or tables.}
+The Sustainable Minds LCA comparison (Section~\ref{sec:lca}) yielded a total environmental impact of \textbf{30\,mPts} for the reference Air Bar NEX design and \textbf{18\,mPts} for the DfD concept---a \textbf{40\% overall improvement}. Table~\ref{tab:lca_results} summarizes the impact category breakdown.
 
 \begin{table}[H]
 \centering
-\caption{LCA results comparison across three design concepts.}
+\caption{LCA impact category comparison: Reference vs.\ DfD Concept (percentage contribution to total impact score).}
 \label{tab:lca_results}
-\begin{tabular}{@{}lccc@{}}
+\begin{tabular}{@{}lcc@{}}
 \toprule
-\textbf{Impact Category} & \textbf{Reference} & \textbf{DfD Concept} & \textbf{Alternative} \\
+\textbf{Impact Category} & \textbf{Reference (\%)} & \textbf{DfD Concept (\%)} \\
 \midrule
-GWP (kg CO$_2$-eq)                & \todo{X} & \todo{X} & \todo{X} \\
-Acidification (kg SO$_2$-eq)      & \todo{X} & \todo{X} & \todo{X} \\
-Eutrophication (kg PO$_4$-eq)     & \todo{X} & \todo{X} & \todo{X} \\
-Resource Depletion (kg Sb-eq)      & \todo{X} & \todo{X} & \todo{X} \\
-Human Toxicity (kg 1,4-DCB-eq)    & \todo{X} & \todo{X} & \todo{X} \\
+Carcinogenics              & 62.62 & 42.0 \\
+Global Warming             & 8.84  & 9.01 \\
+Acidification              & 5.21  & 8.02 \\
+Fossil Fuel Depletion      & 5.41  & 6.87 \\
+Respiratory Effects        & 4.65  & 6.47 \\
+Ecotoxicity                & 4.64  & 5.36 \\
+Eutrophication             & 3.62  & 5.80 \\
+Non-Carcinogenics          & 3.73  & 7.54 \\
+Smog                       & 1.26  & 1.26 \\
+\midrule
+\textbf{Total (mPts)}     & \textbf{30}  & \textbf{18} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.9\textwidth]{figures/lca_results_bar.pdf}
-%     \caption{Comparative LCA results across all three design concepts.}
-%     \label{fig:lca_results}
-% \end{figure}
+The dominant improvement came from switching the aluminum housing from primary to recycled (secondary) aluminum, which drastically reduced the carcinogenics impact associated with primary aluminum smelting. A dedicated LCA for the alternative concept (universal battery standard) was not performed; however, the additional battery-reuse benefit would further reduce per-device impacts by amortizing battery manufacturing across multiple use cycles.
 
 \subsection{Disassembly Performance}
 
@@ -40,9 +41,9 @@ Human Toxicity (kg 1,4-DCB-eq)    & \todo{X} & \todo{X} & \todo{X} \\
 \textbf{Metric} & \textbf{Reference} & \textbf{DfD Concept} & \textbf{Alternative} \\
 \midrule
 Battery removal steps     & $\sim$10           & 1          & 1 \\
-Battery removal time      & 4--5 min           & $<$5 sec   & $<$5 sec \\
+Battery removal time      & 10--15 min         & $<$5 sec   & $<$5 sec \\
 Full disassembly steps    & $\sim$10           & $\leq$5    & $\leq$5 \\
-Full disassembly time     & 4--5 min           & $<$30 sec  & $<$30 sec \\
+Full disassembly time     & 10--15 min         & $<$30 sec  & $<$30 sec \\
 Tools required            & X-acto knife       & None       & None \\
 Destructive?              & Yes                & No         & No \\
 \bottomrule
