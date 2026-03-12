@@ -1,0 +1,61 @@
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage[numbers]{natbib}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{siunitx}
+
+% Page geometry
+\usepackage[margin=1in]{geometry}
+
+% Hyperref config
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    citecolor=green!50!black,
+    urlcolor=blue!70!black,
+}
+
+% ============================================================
+% COLOR-CODED AUTHOR LEGEND
+% Each team member's writing is identified by text color.
+% Update names below once team is finalized.
+% Usage: \memberA{Text written by Member A}
+% ============================================================
+\definecolor{colorA}{RGB}{0, 0, 0}        % Black - Member A
+\definecolor{colorB}{RGB}{0, 0, 180}      % Blue - Member B
+\definecolor{colorC}{RGB}{180, 0, 0}      % Red - Member C
+\definecolor{colorD}{RGB}{0, 130, 0}      % Green - Member D
+
+\newcommand{\memberA}[1]{\textcolor{colorA}{#1}}
+\newcommand{\memberB}[1]{\textcolor{colorB}{#1}}
+\newcommand{\memberC}[1]{\textcolor{colorC}{#1}}
+\newcommand{\memberD}[1]{\textcolor{colorD}{#1}}
+
+% Legend box (place on cover page)
+\newcommand{\authorlegend}{%
+\vspace{1em}
+\noindent\fbox{\parbox{0.6\textwidth}{%
+    \textbf{Author Color Legend:}\\[4pt]
+    \textcolor{colorA}{\rule{1cm}{2pt}} Member A Name\\
+    \textcolor{colorB}{\rule{1cm}{2pt}} Member B Name\\
+    \textcolor{colorC}{\rule{1cm}{2pt}} Member C Name\\
+    \textcolor{colorD}{\rule{1cm}{2pt}} Member D Name
+}}
+}
+
+% ============================================================
+% TODO marker for placeholders
+% ============================================================
+\newcommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}

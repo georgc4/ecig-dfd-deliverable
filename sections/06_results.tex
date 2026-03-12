@@ -1,0 +1,91 @@
+\section{Results and Discussion}
+\label{sec:results}
+
+\subsection{LCA Comparison}
+
+\todo{Present the three-way LCA comparison (Reference vs.\ DfD Concept vs.\ Alternative Concept) across all impact categories. Use bar charts or tables.}
+
+\begin{table}[H]
+\centering
+\caption{LCA results comparison across three design concepts.}
+\label{tab:lca_results}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Impact Category} & \textbf{Reference} & \textbf{DfD Concept} & \textbf{Alternative} \\
+\midrule
+GWP (kg CO$_2$-eq)                & \todo{X} & \todo{X} & \todo{X} \\
+Acidification (kg SO$_2$-eq)      & \todo{X} & \todo{X} & \todo{X} \\
+Eutrophication (kg PO$_4$-eq)     & \todo{X} & \todo{X} & \todo{X} \\
+Resource Depletion (kg Sb-eq)      & \todo{X} & \todo{X} & \todo{X} \\
+Human Toxicity (kg 1,4-DCB-eq)    & \todo{X} & \todo{X} & \todo{X} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.9\textwidth]{figures/lca_results_bar.pdf}
+%     \caption{Comparative LCA results across all three design concepts.}
+%     \label{fig:lca_results}
+% \end{figure}
+
+\subsection{Disassembly Performance}
+
+\begin{table}[H]
+\centering
+\caption{Disassembly performance metrics.}
+\label{tab:disassembly_results}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Metric} & \textbf{Reference} & \textbf{DfD Concept} & \textbf{Alternative} \\
+\midrule
+Battery removal steps     & $\sim$10           & 1          & 1 \\
+Battery removal time      & 4--5 min           & $<$5 sec   & $<$5 sec \\
+Full disassembly steps    & $\sim$10           & $\leq$5    & $\leq$5 \\
+Full disassembly time     & 4--5 min           & $<$30 sec  & $<$30 sec \\
+Tools required            & X-acto knife       & None       & None \\
+Destructive?              & Yes                & No         & No \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Material Recovery Analysis}
+
+\begin{table}[H]
+\centering
+\caption{Estimated material recovery rates by design concept.}
+\label{tab:recovery}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Material} & \textbf{Reference} & \textbf{DfD Concept} & \textbf{Alternative} \\
+\midrule
+Lithium          & $\sim$0\% & $>$90\% & $>$95\% (reuse + recycle) \\
+Cobalt/Nickel    & $\sim$0\% & $>$90\% & $>$95\% \\
+Copper           & $\sim$0\% & $\sim$80\% & $\sim$85\% \\
+Aluminum         & $\sim$0\% & $\sim$85\% & N/A (PP housing) \\
+Plastics         & $\sim$0\% & $\sim$50\% & $>$80\% (mono-material) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Cost Implications}
+
+\todo{Analyze the cost implications of the redesign:}
+\begin{itemize}
+    \item \textbf{Additional manufacturing cost}: Snap-fit tooling, battery door mechanism, spring contacts, material marking. Estimate: \todo{\$X per unit increase.}
+    \item \textbf{Material savings}: Battery reuse reduces per-device battery cost. If battery is reused 10 times, battery cost per device drops by $\sim$90\%.
+    \item \textbf{Regulatory compliance}: DfD design preemptively meets EU Batteries Regulation 2027 requirements, avoiding future redesign costs.
+    \item \textbf{Waste management savings}: Reduced fire risk and simplified recycling lower municipal waste processing costs.
+\end{itemize}
+
+\subsection{Discussion}
+
+\todo{Interpret the results. Consider:}
+\begin{itemize}
+    \item Which impact categories show the greatest reduction from the alternative concept?
+    \item How does the battery reuse assumption (number of cycles) affect the results?
+    \item What are the barriers to adoption? (manufacturer resistance, consumer behavior, cost, standardization governance)
+    \item How does this compare to the outright ban approach (UK, Australia)?
+    \item What role does the EU Batteries Regulation play as a forcing function?
+    \item Limitations: assumptions in LCA modeling, idealized recycling rates, consumer participation uncertainty
+\end{itemize}

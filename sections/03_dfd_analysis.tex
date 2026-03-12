@@ -1,0 +1,117 @@
+
+\title{DFD}
+\author{Noah Thomas}
+\date{March 2026}
+
+
+\maketitle
+
+\section{Introduction}
+
+\section{Design for Disassembly Analysis}
+\label{sec:dfd}
+
+\subsection{Overview of DfD Principles}
+
+Design for Disassembly (DfD) is an environmentally conscious design practice that incorporates ease of disassembly into the initial product design. For the Air Bar NEX Vape, this means putting the components together in a way that allows the user to take apart the vape easily, balancing modularity and disassembly with structural integrity.
+
+The goal is to enable efficient separation of parts and materials at end of life for service, recycling, and re-manufacturing. Specifically, this improves the sustainability of the Air Bar NEX Vape by allowing the producers and users to recycle the battery. In the current vape life cycle, the battery is often disposed of improperly, as users tend to dispose of a perfectly usable battery once the fluid of the vape runs out.
+
+\subsection{Principle 1: Use Reversible Fasteners}
+
+\textbf{Current design}: The housing is sealed using adhesive bonding, with certain components, such as the PCB, further being secured via a press-fit. Disassembly required extensive cutting with a thin X-acto knife, damaging both the housing and internal components. This process was particularly cumbersome, 
+
+\textbf{DfD redesign}: Replace permanent joining with \textbf{snap-fit connectors}. A snap-fit housing consists of flexible cantilever beams with catches that deflect during assembly and lock into position, allowing non-destructive separation by applying localized force at the release points. This enables repeated assembly/disassembly without tools.
+
+\todo{Insert diagram: current joining method vs. proposed snap-fit design.}
+
+\subsection{Principle 2: Standardize and Minimize Fasteners}
+
+\textbf{Current design}: \todo{Describe fastener situation --- typically no screws at all in disposable vapes; everything is press-fit or welded.}
+
+\textbf{DfD redesign}: If screws are needed (e.g., for battery door retention), use a single standard screw type (e.g., Phillips M2) throughout the product. Minimize total fastener count to reduce disassembly time and tool requirements.
+
+\subsection{Principle 3: Design Modular Architecture}
+
+\textbf{Current design}: All components are integrated into a single sealed unit. The battery, PCB, atomizer, and reservoir are assembled sequentially and cannot be individually accessed or removed.
+
+\textbf{DfD redesign}: Separate the product into three self-contained modules:
+\begin{enumerate}
+    \item \textbf{Battery module}: Removable, standardized lithium-ion cell in a snap-fit compartment
+    \item \textbf{Atomizer/reservoir module}: Replaceable cartridge containing the coil, wick, and e-liquid
+    \item \textbf{Body/electronics module}: Housing with integrated PCB, mouthpiece, and electrical contacts
+\end{enumerate}
+
+This modular architecture allows each module to be directed to the appropriate recycling stream at end of life, and enables battery reuse across multiple device lifecycles.
+
+\subsection{Principle 4: Make Hazardous Components Most Accessible}
+
+\textbf{Current design}: The lithium-ion battery is buried in the center of the device, surrounded by the reservoir and housing. Accessing it requires complete destructive disassembly.
+
+\textbf{DfD redesign}: Position the battery compartment at the \textbf{base of the device} with a snap-fit or twist-lock door. The battery should be the \textbf{first component removable} without any tools, following a linear disassembly path. This is critical because:
+\begin{itemize}
+    \item Lithium-ion batteries are classified as hazardous waste
+    \item Batteries in the waste stream cause fires at a cost of \$95M/year \cite{wmw2025}
+    \item Easy removal encourages consumer participation in battery recycling
+\end{itemize}
+
+\subsection{Principle 5: Mark Materials for Identification}
+
+\textbf{Current design}: \todo{Describe whether any material markings exist. Typically, disposable vapes have no recycling symbols or material identification codes on any component.}
+
+\textbf{DfD redesign}: Apply standard material identification markings:
+\begin{itemize}
+    \item ISO 11469 plastic identification codes on all plastic parts (e.g., $>$PP$<$, $>$PC$<$)
+    \item Metal type stamps on metallic housing components
+    \item Battery chemistry labeling (Li-ion, capacity, voltage)
+    \item QR code linking to recycling instructions (aligned with EU Batteries Regulation requirements \cite{eu_batteries_2023})
+\end{itemize}
+
+\subsection{Principle 6: Use Compatible Materials}
+
+\textbf{Current design}: Mixed material construction --- aluminum housing bonded to plastic components, copper PCB attached with solder, different plastic types used without separation features.
+
+\textbf{DfD redesign}: Group compatible materials within modules to avoid cross-contamination during recycling:
+\begin{itemize}
+    \item Mono-material plastic housing (single polymer type, e.g., PP)
+    \item All electronics (PCB, wiring) contained in one separable module
+    \item Battery isolated with its own current collectors and contacts
+    \item Avoid coatings or surface treatments that prevent material recyclability
+\end{itemize}
+
+\subsection{Principle 7: Minimize Disassembly Operations}
+
+\textbf{Current design}: \todo{Count the number of operations required to fully disassemble the current product. Time the process. Note tools required.}
+
+\textbf{DfD redesign target}:
+\begin{itemize}
+    \item Battery removal: \textbf{1 step}, 0 tools, $<$5 seconds
+    \item Full disassembly to individual modules: \textbf{3 steps}, 0 tools, $<$30 seconds
+    \item Complete disassembly to individual parts: \textbf{$\leq$5 steps}, 0--1 standard tools
+\end{itemize}
+
+\subsection{Disassembly Comparison}
+
+\begin{table}[H]
+\centering
+\caption{Disassembly comparison: current design vs.\ DfD redesign.}
+\label{tab:disassembly_comparison}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Metric} & \textbf{Current Design} & \textbf{DfD Redesign} \\
+\midrule
+Steps to remove battery       & \todo{X}        & 1 \\
+Total disassembly steps        & \todo{X}        & $\leq$5 \\
+Tools required                 & \todo{pliers, knife} & None (hand only) \\
+Disassembly time               & \todo{X min}    & $<$30 sec \\
+Destructive?                   & Yes             & No \\
+Battery reusable after removal & No              & Yes \\
+Material recovery rate         & $\sim$0\%       & $>$90\% (target) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\todo{Insert side-by-side photos or diagrams showing the current vs.\ redesigned disassembly sequence.}
+
+
+\end{document}

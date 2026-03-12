@@ -1,0 +1,118 @@
+\section{Materials and Manufacturing Processes}
+\label{sec:materials}
+
+\subsection{Part Identification and Disassembly}
+
+\todo{Insert photos of disassembly process from makerspace session (3/2/26).}
+
+The Air Bar NEX 3K was sealed via press-fit (mouthpiece into aluminum shell body). Disassembly required an X-acto knife to separate the mouthpiece from the body and was \textbf{destructive}---the press-fit joint was permanently deformed during removal. Reaching the battery required approximately \textbf{10 distinct steps} and took \textbf{4--5 minutes}, confirming that the current design is not intended for disassembly or component recovery.
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{figures/disassembly_steps.jpg}
+%     \caption{Disassembly sequence of the Air Bar NEX 3K e-cigarette. Disassembly required destructive methods (X-acto knife). Photos from 3/2/26 makerspace session.}
+%     \label{fig:disassembly}
+% \end{figure}
+
+The device was disassembled into the following distinct parts:
+
+\begin{table}[H]
+\centering
+\caption{Part inventory of the disassembled e-cigarette.}
+\label{tab:parts}
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{\#} & \textbf{Part} & \textbf{Material} & \textbf{Weight (g)} \\
+\midrule
+1 & Battery cell (13450)   & Li-ion (Co, Ni, Li, graphite anode) & 12.0 \\
+2 & Outer housing         & Aluminum (anodized)                  & 13.0 \\
+3 & Atomizer coil + wick  & Kanthal/nichrome wire, cotton        & \multicolumn{1}{c}{---\textsuperscript{a}} \\
+4 & PCB assembly          & FR4, copper, solder, ICs             & 2.0 \\
+5 & Mouthpiece            & Black plastic (PP)                   & \multicolumn{1}{c}{---\textsuperscript{b}} \\
+6 & E-liquid reservoir (incl.\ atomizer) & Cotton / plastic absorbent, e-liquid & 10.0 \\
+7 & Seals, inner chassis, wires \& insulators & Silicone, white plastic, copper wire & 15.0\textsuperscript{b} \\
+\midrule
+  & \textbf{Total}        &                                      & 52.0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textsuperscript{a} Atomizer coil + wick weight included in the reservoir combined weight (row~6).\\
+\textsuperscript{b} Mouthpiece, inner chassis (white plastic frame), wires, and seals were not individually weighed. The combined remainder is 15.0\,g (52.0 -- 12.0 -- 13.0 -- 2.0 -- 10.0).
+
+\subsection{Material Identification}
+\label{sec:material_id}
+
+Materials were identified through visual inspection, magnet testing, and examination of manufacturer markings. The battery wrapper was labeled with chemistry and capacity data (13450, 3.7\,V, 650\,mAh, 2.405\,Wh). The housing was confirmed as aluminum by its light weight (13\,g for the full shell), non-magnetic behavior, and characteristic silvery appearance beneath the green anodized finish at the cut edge (wall thickness: 0.7\,mm). No recycling symbols were present on any part---only branding.
+
+\subsubsection{Metallic Materials}
+
+The product contains at least \textbf{two distinct metallic materials}, satisfying the project requirement:
+
+\begin{enumerate}
+    \item \textbf{Aluminum alloy} (housing): Confirmed by light weight (13\,g for full shell at 0.7\,mm wall thickness), non-magnetic behavior, silvery appearance at cut edge beneath green anodized surface finish.
+    \item \textbf{Kanthal / Nichrome} (atomizer coil): Resistance heating wire embedded in the cotton wick assembly. Coil was pressed into the juice-soaked foam reservoir.
+    \item \textbf{Copper} (PCB traces): Visible as reddish-orange traces on the circuit board.
+    \item \textbf{Solder} (PCB joints): Tin-lead (Sn-Pb) or lead-free (Sn-Ag-Cu) solder. \todo{Identify type.}
+    \item \textbf{Battery cathode metals}: Cobalt, nickel, manganese, and lithium in the Li-ion cell cathode. Graphite anode. Aluminum and copper current collectors.
+\end{enumerate}
+
+\subsubsection{Non-Metallic Materials}
+
+\begin{enumerate}
+    \item \textbf{Plastics}: Black polypropylene (PP) mouthpiece and white plastic inner chassis frame (likely PC or ABS). No recycling codes were marked on any plastic parts.
+    \item \textbf{FR4 substrate}: Fiberglass-reinforced epoxy laminate (PCB base material). Contains brominated flame retardants.
+    \item \textbf{Cotton}: Organic cotton wick in the atomizer assembly and absorbent reservoir material.
+    \item \textbf{Silicone}: O-rings and sealing gaskets.
+    \item \textbf{Battery electrolyte}: Lithium salt in organic solvent (sealed inside the cell).
+\end{enumerate}
+
+\todo{Insert close-up photos of each material after identification tests.}
+
+\subsection{Manufacturing Process Analysis}
+\label{sec:processes}
+
+At least \textbf{three parts require multiple manufacturing processes}, satisfying the project requirement:
+
+\subsubsection{Battery Cell (3+ processes)}
+\begin{enumerate}
+    \item Electrode slurry coating onto current collector foils (Al for cathode, Cu for anode)
+    \item Calendering (compressing electrode layers)
+    \item Cell stacking or jellyroll winding
+    \item Electrolyte filling and sealing
+    \item Spot welding of tabs to terminals
+    \item Wrapping in protective sleeve (heat-shrink PVC or PET)
+\end{enumerate}
+
+\subsubsection{Outer Housing (3+ processes)}
+\begin{enumerate}
+    \item Aluminum impact extrusion from slug (stadium/rounded-rectangle cross-section, 0.7\,mm wall)
+    \item Anodizing for green surface finish
+    \item Pad printing for branding/graphics
+\end{enumerate}
+
+\subsubsection{PCB Assembly (3+ processes)}
+\begin{enumerate}
+    \item PCB fabrication: copper lamination, photolithographic etching, drilling
+    \item Solder paste application (stencil printing)
+    \item Surface-mount technology (SMT) component placement
+    \item Reflow soldering
+    \item \todo{Through-hole soldering for any leaded components}
+    \item Conformal coating or solder mask application
+\end{enumerate}
+
+\subsubsection{Other Parts}
+\begin{itemize}
+    \item \textbf{Mouthpiece}: Injection molding (single process)
+    \item \textbf{Atomizer coil}: Wire drawing $\rightarrow$ coil winding $\rightarrow$ assembly with wick (2--3 processes)
+    \item \textbf{Seals}: Compression molding or injection molding of silicone
+\end{itemize}
+
+\subsection{Use Phase, End of Life, and Transportation}
+
+\todo{Estimate or specify:}
+\begin{itemize}
+    \item \textbf{Use phase}: Energy consumed per device (battery capacity $\times$ voltage = 2.405\,Wh, per battery marking: 650\,mAh at 3.7\,V). No maintenance, no consumables beyond initial e-liquid.
+    \item \textbf{End of life}: Currently 100\% landfill/incineration for most users. No take-back program from manufacturers. Battery is a hazardous waste item requiring special handling.
+    \item \textbf{Transportation}: Manufactured in Shenzhen, China. Sea freight to US East Coast: $\sim$20{,}000\,km. At 52\,g per unit, a standard 20-ft container ($\sim$22{,}000\,kg payload) holds $\sim$420{,}000 devices.
+\end{itemize}
