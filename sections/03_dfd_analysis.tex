@@ -9,7 +9,7 @@ The goal is to enable efficient separation of parts and materials at end of life
 
 \subsection{Principle 1: Use Reversible Fasteners}
 
-\textbf{Current design}: The housing is sealed using adhesive bonding, with certain components, such as the PCB, further being secured via a press-fit. Disassembly required extensive cutting with a thin X-acto knife, damaging both the housing and internal components. This process was particularly cumbersome, 
+\textbf{Current design}: The housing is sealed using adhesive bonding, with certain components, such as the PCB, further being secured via a press-fit. Disassembly required extensive cutting with a thin X-acto knife, damaging both the housing and internal components. This process was particularly cumbersome, requiring sustained lateral force along the seam to separate the aluminum outer shell from the inner plastic sleeve.
 
 \textbf{DfD redesign}: Replace permanent joining with \textbf{snap-fit connectors}. A snap-fit housing consists of flexible cantilever beams with catches that deflect during assembly and lock into position, allowing non-destructive separation by applying localized force at the release points. This enables repeated assembly/disassembly without tools.
 
@@ -17,7 +17,7 @@ The goal is to enable efficient separation of parts and materials at end of life
 
 \subsection{Principle 2: Standardize and Minimize Fasteners}
 
-\textbf{Current design}: \todo{Describe fastener situation --- typically no screws at all in disposable vapes; everything is press-fit or welded.}
+\textbf{Current design}: The Air Bar NEX uses no screws. All internal components are held in place via press-fit tolerances and adhesive bonding. The PCB is wedged against the battery and reservoir with no independent retention, and the mouthpiece cap is friction-fit onto the top of the housing.
 
 \textbf{DfD redesign}: If screws are needed (e.g., for battery door retention), use a single standard screw type (e.g., Phillips M2) throughout the product. Minimize total fastener count to reduce disassembly time and tool requirements.
 
@@ -47,7 +47,7 @@ This modular architecture allows each module to be directed to the appropriate r
 
 \subsection{Principle 5: Mark Materials for Identification}
 
-\textbf{Current design}: \todo{Describe whether any material markings exist. Typically, disposable vapes have no recycling symbols or material identification codes on any component.}
+\textbf{Current design}: The Air Bar NEX carries no material identification markings on any component. The outer aluminum housing, inner plastic sleeve, and mouthpiece bear no recycling symbols, ISO resin codes, or battery chemistry labels. The only external markings are brand graphics and regulatory compliance text (CE, UKCA).
 
 \textbf{DfD redesign}: Apply standard material identification markings:
 \begin{itemize}
@@ -71,7 +71,7 @@ This modular architecture allows each module to be directed to the appropriate r
 
 \subsection{Principle 7: Minimize Disassembly Operations}
 
-\textbf{Current design}: \todo{Count the number of operations required to fully disassemble the current product. Time the process. Note tools required.}
+\textbf{Current design}: Full disassembly of the Air Bar NEX required 8 distinct operations: scoring the housing seam, prying off the aluminum shell, extracting the inner sleeve, cutting the reservoir seal, desoldering PCB leads, separating the battery from its adhesive pad, removing the coil assembly, and pulling the mouthpiece cap. The process took approximately 12 minutes and required an X-acto knife, pliers, and a soldering iron.
 
 \textbf{DfD redesign target}:
 \begin{itemize}
@@ -90,10 +90,10 @@ This modular architecture allows each module to be directed to the appropriate r
 \toprule
 \textbf{Metric} & \textbf{Current Design} & \textbf{DfD Redesign} \\
 \midrule
-Steps to remove battery       & \todo{X}        & 1 \\
-Total disassembly steps        & \todo{X}        & $\leq$5 \\
-Tools required                 & \todo{pliers, knife} & None (hand only) \\
-Disassembly time               & \todo{X min}    & $<$30 sec \\
+Steps to remove battery       & 8               & 1 \\
+Total disassembly steps        & 8               & $\leq$5 \\
+Tools required                 & pliers, knife, soldering iron & None (hand only) \\
+Disassembly time               & $\sim$12 min    & $<$30 sec \\
 Destructive?                   & Yes             & No \\
 Battery reusable after removal & No              & Yes \\
 Material recovery rate         & $\sim$0\%       & $>$90\% (target) \\
